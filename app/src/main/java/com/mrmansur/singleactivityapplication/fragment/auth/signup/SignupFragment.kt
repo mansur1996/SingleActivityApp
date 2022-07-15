@@ -1,10 +1,9 @@
 package com.mrmansur.singleactivityapplication.fragment.auth.signup
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.mrmansur.singleactivityapplication.R
 import com.mrmansur.singleactivityapplication.databinding.FragmentSignupBinding
@@ -14,5 +13,13 @@ class SignupFragment : Fragment(R.layout.fragment_signup) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
+    }
+
+    private fun initViews() {
+        binding.tvSignin.setOnClickListener {
+            findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
+        }
+
     }
 }
